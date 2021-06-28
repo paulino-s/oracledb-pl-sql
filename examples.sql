@@ -54,3 +54,44 @@ Redondee los resultados al valor entero más cercano, con un formato numérico p
     Salario Máx Salario Mín Salario Plan Salario Pro
     ----------- ----------- ------------ -----------
     $24,000.00   $2,100.00  $691,400.00   $6,462.00
+
+
+
+/* Muestre el salario más alto, más bajo, salario total y salario promedio por cada tipo de puesto que se tiene en la organización. 
+Etiquete las columnas como «Puesto», «Salario Máximo», «Salario Mínimo», «Salario Total» y «Salario Promedio» respectivamente. 
+Redondee los resultados con dos cifras decimales, con un formato numérico para la moneda de dólares. */
+
+    SELECT
+    j.job_title AS "Puesto",
+    TO_CHAR(ROUND(MAX(e.salary),2),'$99,999.00') AS "Salario Máximo", 
+    TO_CHAR(ROUND(MIN(e.salary),2),'$99,999.00') AS "Salario Mínimo", 
+    TO_CHAR(ROUND(SUM(e.salary),2),'$999,999.00') AS "Salario Total",
+    TO_CHAR(ROUND(AVG(e.salary),2),'$99,999.00') AS "Salario Promedio"
+    FROM employees e INNER JOIN jobs j ON e.job_id=j.job_id
+    GROUP BY j.job_title;
+
+
+    Puesto                              Salario Máx Salario Mín Salario Tota Salario Pro
+    ----------------------------------- ----------- ----------- ------------ -----------
+    Human Resources Representative        $6,500.00   $6,500.00    $6,500.00   $6,500.00
+    Accounting Manager                   $12,000.00  $12,000.00   $12,000.00  $12,000.00
+    Purchasing Manager                   $11,000.00  $11,000.00   $11,000.00  $11,000.00
+    Public Accountant                     $8,300.00   $8,300.00    $8,300.00   $8,300.00
+    Stock Clerk                           $3,600.00   $2,100.00   $55,700.00   $2,785.00
+    President                            $24,000.00  $24,000.00   $24,000.00  $24,000.00
+    Accountant                            $9,000.00   $6,900.00   $39,600.00   $7,920.00
+    Sales Manager                        $14,000.00  $10,500.00   $61,000.00  $12,200.00
+    Sales Representative                 $11,500.00   $6,100.00  $250,500.00   $8,350.00
+    Stock Manager                         $8,200.00   $5,800.00   $36,400.00   $7,280.00
+    Administration Vice President        $17,000.00  $17,000.00   $34,000.00  $17,000.00
+
+    Puesto                              Salario Máx Salario Mín Salario Tota Salario Pro
+    ----------------------------------- ----------- ----------- ------------ -----------
+    Public Relations Representative      $10,000.00  $10,000.00   $10,000.00  $10,000.00
+    Shipping Clerk                        $4,200.00   $2,500.00   $64,300.00   $3,215.00
+    Finance Manager                      $12,000.00  $12,000.00   $12,000.00  $12,000.00
+    Programmer                            $9,000.00   $4,200.00   $28,800.00   $5,760.00
+    Marketing Manager                    $13,000.00  $13,000.00   $13,000.00  $13,000.00
+    Administration Assistant              $4,400.00   $4,400.00    $4,400.00   $4,400.00
+    Marketing Representative              $6,000.00   $6,000.00    $6,000.00   $6,000.00
+    Purchasing Clerk                      $3,100.00   $2,500.00   $13,900.00   $2,780.00
