@@ -14,7 +14,72 @@ WHERE EMPLOYEE_ID = 102;
 
 
 ===============================================================
+
+SELECT FIRST_NAME || '' || LAST_NAME "NOMBRE",
+    DEPARTMENT_ID
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID = 80;
+
+
+SELECT DEPARTMENT_NAME 
+FROM DEPARTMENTS
+WHERE DEPARTMENT_ID = 90;
+
+DESCRIBE JOB_HISTORY;
+
+SELECT EMPLOYEE_ID AS "# EMPLEADO",
+START_DATE AS "INICIO",
+END_DATE AS "FIN",
+JOB_ID AS "TIPO",
+DEPARTMENT_ID AS "# DEPARTAMENTO"
+FROM JOB_HISTORY
+WHERE EMPLOYEE_ID = 102;
+
+SELECT COUNTRY_NAME FROM COUNTRIES;
+
+SELECT *FROM COUNTRIES
+WHERE REGION_ID = 1;
+
+DESC REGIONS;
+
+SELECT REGION_NAME
+FROM REGIONS 
+WHERE REGION_ID = 4;
+
+SELECT FIRST_NAME AS "NOMBRE",
+COMMISSION_PCT AS "COMISIONES"
+FROM EMPLOYEES
+WHERE COMMISSION_PCT > 0.3;
+
+NOMBRE               COMISIONES
+-------------------- ----------
+John                         .4
+Janette                     .35
+Patrick                     .35
+Allan                       .35
+
 ===============================================================
+
+SELECT FIRST_NAME AS "NOMBRE",
+LAST_NAME AS "APELLIDO",
+DEPARTMENT_ID AS "DEPARTAMENTO",
+MANAGER_ID AS "JEFE",
+SALARY AS "SALARIOS"
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID IN (10, 20, 30);
+
+NOMBRE               APELLIDO                  DEPARTAMENTO       JEFE   SALARIOS
+-------------------- ------------------------- ------------ ---------- ----------
+Jennifer             Whalen                              10        101       4400
+Michael              Hartstein                           20        100      13000
+Pat                  Fay                                 20        201       6000
+Den                  Raphaely                            30        100      11000
+Alexander            Khoo                                30        114       3100
+Shelli               Baida                               30        114       2900
+Sigal                Tobias                              30        114       2800
+Guy                  Himuro                              30        114       2600
+Karen                Colmenares                          30        114       2500
+
 ===============================================================
 ===============================================================
 ===============================================================
