@@ -73,7 +73,7 @@ NOMBRE               APELLIDO                  DEPARTAMENTO       JEFE   SALARIO
 Jennifer             Whalen                              10        101       4400
 Michael              Hartstein                           20        100      13000
 Pat                  Fay                                 20        201       6000
-Den                  Raphaely                            30        100      11000
+Den                  Raphaely                             30        100      11000
 Alexander            Khoo                                30        114       3100
 Shelli               Baida                               30        114       2900
 Sigal                Tobias                              30        114       2800
@@ -81,6 +81,22 @@ Guy                  Himuro                              30        114       260
 Karen                Colmenares                          30        114       2500
 
 ===============================================================
+
+SELECT FIRST_NAME AS "NOMBRE", 
+LAST_NAME AS "APELLIDO",
+DEPARTMENT_ID AS "# DEPARTAMENTO"
+FROM EMPLOYEES
+WHERE NOT (DEPARTMENT_ID >= 500);
+
+NOMBRE               APELLIDO                  # DEPARTAMENTO
+-------------------- ------------------------- --------------
+Peter                Vargas                                50
+Clara                Vishney                               80
+Shanta               Vollman                               50
+Alana                Walsh                                 50
+Matthew              Weiss                                 50
+Jennifer             Whalen                                10
+Eleni                Zlotkey                               80
 ===============================================================
 ===============================================================
 ===============================================================
